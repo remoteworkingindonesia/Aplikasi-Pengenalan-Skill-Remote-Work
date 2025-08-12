@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "rwi-skill-discovery",
-  "routes": [
+  "rewrite": [
     {
       "src": "/(.*)",
       "dest": "/index.html"
