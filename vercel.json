@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "name": "rwi-skill-discovery"
+  "name": "rwi-skill-discovery",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
