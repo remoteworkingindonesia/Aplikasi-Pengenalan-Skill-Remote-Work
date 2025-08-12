@@ -1,0 +1,90 @@
+{
+  "name": "RWI Skill Discovery Tool",
+  "version": "1.0.0",
+  "description": "Embeddable skill assessment tool for Remote Working Indonesia",
+  "author": "Remote Working Indonesia",
+  "license": "MIT",
+  "homepage": "https://your-domain.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/rwi-skill-discovery"
+  },
+  "deployment": {
+    "build": {
+      "entry": "index.html",
+      "output": "dist",
+      "assets": [
+        "styles/globals.css",
+        "components/**/*.tsx",
+        "email-templates/**/*.html"
+      ]
+    },
+    "hosting": {
+      "platforms": [
+        {
+          "name": "Vercel",
+          "config": "vercel.json",
+          "domain": "your-app.vercel.app"
+        },
+        {
+          "name": "Netlify", 
+          "config": "netlify.toml",
+          "domain": "your-app.netlify.app"
+        },
+        {
+          "name": "GitHub Pages",
+          "config": ".github/workflows/deploy.yml",
+          "domain": "your-username.github.io/rwi-skill-discovery"
+        }
+      ]
+    },
+    "cdn": {
+      "enabled": true,
+      "provider": "CloudFlare",
+      "cache_duration": "1h",
+      "compress": true
+    },
+    "security": {
+      "csp": {
+        "frame-ancestors": "*",
+        "frame-src": "self",
+        "script-src": "self unsafe-inline *.jsdelivr.net *.unpkg.com *.tailwindcss.com"
+      },
+      "headers": {
+        "X-Frame-Options": "ALLOWALL",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      }
+    }
+  },
+  "embedding": {
+    "iframe_friendly": true,
+    "responsive": true,
+    "mobile_optimized": true,
+    "lazy_loading": true,
+    "cross_origin": true,
+    "postMessage_api": true
+  },
+  "analytics": {
+    "google_analytics": "GA_MEASUREMENT_ID",
+    "embed_tracking": true,
+    "user_privacy": "compliant"
+  },
+  "features": {
+    "assessment": {
+      "multi_stage": true,
+      "ai_powered": true,
+      "pdf_generation": true,
+      "email_integration": true
+    },
+    "data_storage": {
+      "local_storage": true,
+      "admin_panel": true,
+      "csv_export": true
+    },
+    "internationalization": {
+      "primary_language": "id",
+      "supported_languages": ["id", "en"]
+    }
+  }
+}

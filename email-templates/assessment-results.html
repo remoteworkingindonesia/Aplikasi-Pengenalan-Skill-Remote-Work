@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Assessment Remote Work Skill - {{to_name}}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 25px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            margin: -30px -30px 30px -30px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .section {
+            margin: 25px 0;
+            padding: 20px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .section h2 {
+            color: #1e40af;
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .info-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #475569;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .info-value {
+            color: #1e40af;
+            font-weight: 500;
+        }
+        .highlight {
+            background-color: #dbeafe;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #93c5fd;
+            margin: 15px 0;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #059669;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #f0fdf4;
+            transform: translateY(-2px);
+        }
+        .footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 14px;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Hasil Assessment Remote Work Skill</h1>
+            <p>Halo {{to_name}}, berikut adalah hasil assessment Anda!</p>
+        </div>
+
+        <div class="section">
+            <h2>👤 Informasi Peserta</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Nama</div>
+                    <div class="info-value">{{to_name}}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Latar Belakang</div>
+                    <div class="info-value">{{user_background}}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Waktu Tersedia</div>
+                    <div class="info-value">{{user_time_availability}}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Level Bahasa Inggris</div>
+                    <div class="info-value">{{user_english_level}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💼 Ringkasan Assessment</h2>
+            <div class="highlight">
+                <p><strong>Pengalaman:</strong> {{user_experience}}</p>
+                <p><strong>Tools & Software:</strong> {{user_tools}}</p>
+                <p><strong>Soft Skills:</strong> {{user_skills}}</p>
+                <p><strong>Preferensi Kerja:</strong> {{user_work_preference}}</p>
+                <p><strong>Jam Kerja Tersedia:</strong> {{user_available_hours}}</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌟 Deskripsi Pengalaman Anda</h2>
+            <div class="highlight">
+                <p>"{{user_description}}"</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ Tantangan yang Dihadapi</h2>
+            <p>{{user_challenges}}</p>
+            <div class="highlight">
+                <p><strong>💡 Tips:</strong> Setiap tantangan adalah opportunity untuk berkembang. Di newsletter RWI, kami akan share tips khusus untuk mengatasi tantangan-tantangan ini!</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>🚀 Langkah Selanjutnya</h2>
+            <p>Hasil assessment lengkap dengan analisis skill tersembunyi, rekomendasi pekerjaan, dan time zone analysis sudah tersedia di website!</p>
+            <a href="{{community_link}}" class="cta-button">👥 Join Komunitas RWI</a>
+        </div>
+
+        <div class="section">
+            <h2>📧 Newsletter RWI</h2>
+            <p>Jangan lupa check newsletter RWI yang akan dikirim setiap minggu berisi:</p>
+            <ul>
+                <li>💼 Job opportunities remote terbaru</li>
+                <li>💡 Tips dan tricks remote working</li>
+                <li>📚 Workshop dan mentoring program</li>
+                <li>🏆 Success stories dari member RWI</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>Remote Working Indonesia</strong></p>
+            <p>Semangat Lokal, Ruang Kerja Global 🇮🇩</p>
+            
+            <div class="social-links">
+                <a href="{{instagram_link}}">📱 Instagram</a>
+                <a href="https://www.threads.com/@remoteworkingindonesia">🧵 Threads</a>
+                <a href="mailto:{{email_contact}}">📧 Email</a>
+            </div>
+            
+            <p>Assessment Date: {{assessment_date}}</p>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 20px;">
+                Email ini dikirim karena Anda telah menyelesaikan assessment di Skill Discovery Tool RWI.
+                Jika ada pertanyaan, hubungi kami di {{email_contact}}
+            </p>
+        </div>
+    </div>
+</body>
+</html>
