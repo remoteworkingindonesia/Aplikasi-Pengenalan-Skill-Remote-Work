@@ -1,12 +1,6 @@
 {
   "version": 2,
   "name": "rwi-skill-discovery",
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
