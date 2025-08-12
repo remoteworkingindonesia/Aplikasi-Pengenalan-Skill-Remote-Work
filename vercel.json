@@ -3,8 +3,8 @@
   "name": "rwi-skill-discovery",
   "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
@@ -43,11 +43,6 @@
       ]
     }
   ],
-  "functions": {
-    "app/api/**/*.ts": {
-      "runtime": "@vercel/node"
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   },
